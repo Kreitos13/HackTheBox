@@ -15,9 +15,13 @@ archivo="$1"
 puertos=$(awk -F/ '/open/{print $1}' "$archivo" | column)
 servicios=$(grep "open" $archivo)
 
-# Imprimir los resultados
+# Imprimir los resultados y redirigir la salida al archivo
+{
 echo "Puertos encontrados:"
 echo "$puertos"
 echo
 echo "Servicios encontrados:"
 echo "$servicios"
+} > portsServices.txt
+
+echo "Los puertos y servicios encontrados se han guardado en portsServices.txt"
