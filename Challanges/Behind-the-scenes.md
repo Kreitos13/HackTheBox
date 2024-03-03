@@ -10,7 +10,8 @@
 	- strlen -> comprueba la longitud de la contraseña
 	- <img src="ANEXOS/Behind The Scenes/2024-02-14  12-37-43.png">
 - *strace* ./behindthescenes
-	- Intenta llamar funciones![[2024-02-14  12-40-05.png]]
+	- Intenta llamar funciones
+ 	- <img src="ANEXOS/Behind The Scenes/2024-02-14  12-40-05.png">
 	- <img src="ANEXOS/Behind The Scenes/2024-02-14  12-43-25.png">
 - *ltrace* ./behindthescenes password
 	- https://stackoverflow.com/questions/18410344/program-received-signal-sigill-illegal-instruction
