@@ -8,20 +8,23 @@
 	- ./challenge `<password>`
 	- strncmp -> comprueba la contraseña con la flag
 	- strlen -> comprueba la longitud de la contraseña
-	- ![[2024-02-14  12-37-43.png]]
+	- <img src="ANEXOS/Behind The Scenes/2024-02-14  12-37-43.png">
 - *strace* ./behindthescenes
 	- Intenta llamar funciones![[2024-02-14  12-40-05.png]]
-	- ![[2024-02-14  12-43-25.png]]
+	- <img src="ANEXOS/Behind The Scenes/2024-02-14  12-43-25.png">
 - *ltrace* ./behindthescenes password
 	- https://stackoverflow.com/questions/18410344/program-received-signal-sigill-illegal-instruction
 	- ud2a y ud2  
-	- ![[2024-02-14  12-40-54.png]]
+	- <img src="ANEXOS/Behind The Scenes/2024-02-14  12-40-54.png">
 - *hexeditor* behindthescenes
-	- ![[2024-02-14  12-55-20.png]]
-	- ![[2024-02-14  13-01-13.png]]
+	- <img src="ANEXOS/Behind The Scenes/2024-02-14  12-55-20.png">
+	- <img src="ANEXOS/Behind The Scenes/2024-02-14  13-01-13.png">
 - *xxd* behindthescenes
-	- ![[2024-02-14  13-35-46.png]]
+	- <img src="ANEXOS/Behind The Scenes/2024-02-14  13-35-46.png">
+
 - `HTB{Itz_0nLy_UD2}`
+
+
 # Info
 -----------
 Se trata de un desafió en el que se requiere hacer ingeniería inversa a un programa que requiere una contraseña para poder funcionar. Si hacemos un `file` al programa, vemos que se trata de una arquitectura 
