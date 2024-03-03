@@ -1,7 +1,9 @@
+# LITTER
+<img src="ANEXOS/Litter/2024-03-03  03-42-05.png">
+
 Khalid acaba de iniciar sesión en un host que él y su equipo usan como anfitrión de pruebas para muchos propósitos diferentes, está fuera de su red corporativa, pero tiene acceso a muchos recursos en la red. El anfitrión se utiliza como vertedero para muchas personas en la empresa, pero es muy útil, por lo que nadie ha planteado ningún problema. Poco sabe Khalid; la máquina ha sido comprometida y la información de la compañía que no debería haber estado allí ahora ha sido robada - depende de usted para averiguar lo que ha sucedido y qué datos se han tomado.
 - `litter.zip` 
 - `hacktheblue`
-<img src="ANEXOS/Litter/2024-03-03  03-42-05.png">
 
 # Reconocimiento
 - *.pcap* -> Packet Capture es un protocolo de captura de paquetes utilizado en redes informáticas, contiene datos de red capturados como tráfico de red, paquetes enviados y recibidos, información de protocolos...
