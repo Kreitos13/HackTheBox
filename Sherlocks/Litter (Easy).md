@@ -4,7 +4,7 @@ Khalid acaba de iniciar sesión en un host que él y su equipo usan como anfitri
 # Reconocimiento
 - *.pcap* -> Packet Capture es un protocolo de captura de paquetes utilizado en redes informáticas, contiene datos de red capturados como tráfico de red, paquetes enviados y recibidos, información de protocolos...
 - `file suspicious_traffic.pcap`
-<img src="/ANEXOS/Litter/2024-03-02  16-31-51.png">
+<img src="ANEXOS/Litter/2024-03-02  16-31-51.png">
 - `strings suspicious_traffic.pcap > strings.txt`
 # Task 1
 #### At a glance, what protocol seems to be suspect in this attack?
