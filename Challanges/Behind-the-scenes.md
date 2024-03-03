@@ -1,11 +1,9 @@
-- https://medium.com/@polygonben/behind-the-scenes-htb-reverse-engineering-b1c0c13d9ab3
-- https://www.youtube.com/watch?v=O9vNPp2k6Jo
-
 # COMANDOS
 ---------------
 - *file* behidthescenes
-	- https://serverfault.com/questions/730922/how-can-i-get-information-about-a-binary-file-that-wont-execute
-	- ELF 64-bit LSB![[2024-02-14  12-32-25.png]]
+	- [Info útil](https://serverfault.com/questions/730922/how-can-i-get-information-about-a-binary-file-that-wont-execute)
+	- ELF 64-bit LSB
+	  <img src="ANEXOS/Behind The Scenes/2024-02-14  12-32-25.png">
 - *strings* behidthescenes
 	- ./challenge `<password>`
 	- strncmp -> comprueba la contraseña con la flag
