@@ -44,9 +44,12 @@ La dirección `192.168.157.145` está intentando descargar desde la IP `192.168.
 - Para buscar los comandos que un atacante envía hay que ver toda la conversación de la sesión UDP que tuvo lugar entre los paquetes UDP, para esto se utiliza la función `Follow -> UDP Stream` para mostrar todos los paquetes.
 <img src="ANEXOS/Litter/2024-03-02  23-31-02.png">
 - Una vez echo esto hay que buscar el las cadenas hexadecimales y pasarlas a texto plano mediante el comando:
+  
 	- `echo -e "$(echo '<cadena en HEX>' | xxd -r -p)"`
+   
 <img src="ANEXOS/Litter/2024-03-02  23-30-26.png">
 - Paquete: 
+
 	- `13938	261.197094	192.168.157.144	192.168.157.145	DNS	208	Standard query 0x650c TXT 1eca012ec7305cb1f877686f616d690a6465736b746f702d756d6e636265.375c746573740d0a0d0a433a5c55736572735c746573745c446f776e6c6f.6164733e.microsofto365.com`
 
 # Task 4
