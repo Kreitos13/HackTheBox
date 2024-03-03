@@ -6,11 +6,18 @@
 
 1. **Writeups: ✍️**
    - [Zipping](https://github.com/Kreitos13/HackTheBox/blob/main/Writeups/Zipping-AC.pdf)
+   - [Keeper](https://github.com/Kreitos13/HackTheBox/blob/main/Writeups/Keeper-AC.pdf)
+   - [Devvortex](https://github.com/Kreitos13/HackTheBox/blob/main/Writeups/Devvortex-AC.pdf)
+   - [Bizness](https://github.com/Kreitos13/HackTheBox/blob/main/Writeups/Bizness-AC.pdf)
+
+2. **Sherlocks: 🔍**
+   - [Litter](https://github.com/Kreitos13/HackTheBox/blob/main/Scripts/readfile.py)
    - Soon
 
-2. **Scripts Útiles:⚒️**
-   - [Readfile.py](https://github.com/Kreitos13/HackTheBox/blob/main/Scripts/readfile.py)
+2. **Challanges: 🤔**
+   - [Behind The Scenes](https://github.com/Kreitos13/HackTheBox/blob/main/Challanges/Behind-the-scenes.md)
    - Soon
+
 
 ## Cómo Contribuir 🔗
 
