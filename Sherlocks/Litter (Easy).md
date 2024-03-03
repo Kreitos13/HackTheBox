@@ -30,6 +30,7 @@ Utilizamos varios filtros para analizar las diferentes IPs:
 - `dns.id == 0x20f8`
 - `ip.src != 192.168.0.1 and ip.dst != 192.168.0.1`
 - `ip.addr == 192.168.157.145`
+
 La dirección `192.168.157.145` está intentando descargar desde la IP `192.168.157.254` por el protocolo DHCP diferentes archivos entre los que destacan:
 - *CNAME (Canonical Name)*: se utiliza para crear alias de un nombre de dominio a otro nombre de dominio, esto permite que un dominio tenga multiples nombres que se resuelva a la misma dirección IP.
 - *MX (Mail Exchange)*: se utiliza para especificar el servidor de correo electrónico responsable de recibir los correos electrónicos a un dominio especifico. Sirve para redirigir el correo al servidor correspondiente y define los servidores por orden de preferencia
