@@ -16,7 +16,7 @@ Khalid acaba de iniciar sesión en un host que él y su equipo usan como anfitri
 ##### Solución: DNS
 
 - `tshark -r suspicious_traffic.pcap -qz io,phs`
-<img src="ANEXOS/Litter/2024-03-02  17-03-17 1.png">
+<img src="ANEXOS/Litter/2024-03-02  17-03-17.png">
 - Abrir el archivo con Wireshark: File -> open -> archivo
 <img src="ANEXOS/Litter/2024-03-02  17-09-08.png">
 
