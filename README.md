@@ -11,7 +11,7 @@
    - [Bizness](https://github.com/Kreitos13/HackTheBox/blob/main/Writeups/Bizness-AC.pdf)
 
 2. **Sherlocks: 🔍**
-   - [Litter](https://github.com/Kreitos13/HackTheBox/blob/main/Scripts/readfile.py)
+   - [Litter](https://github.com/Kreitos13/HackTheBox/blob/main/Sherlocks/Litter%20(Easy).md)
    - Soon
 
 2. **Challanges: 🤔**
