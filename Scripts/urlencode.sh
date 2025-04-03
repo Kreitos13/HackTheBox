@@ -15,11 +15,11 @@ urlencode() {
         encoded+="$o"
     done
 
-    echo "$encoded"
+    echo -e "\nURL String:\n\n$encoded"
 }
 
 if [ -z "$1" ]; then
-    echo "Usage: $0 \"string to encode\""
+    echo -e "\nUsage: $0 \"string to encode\""
 else
     urlencode "$1"
 fi
