@@ -1,7 +1,7 @@
 #!/bin/bash
 # ============================
 #   machine_warmup.sh
-#   Author: Kr31tos 😎
+#   Author: Kr31tos 😈
 #   Purpose: Add HTB IP to /etc/hosts, verify connectivity, run initial Nmap scan, and open in browser.
 #   - Add script in /usr/local/bin/machine_warmup
 #   - sudo chmod +x machine_warmup
