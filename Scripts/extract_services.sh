@@ -14,7 +14,7 @@ show_help() {
     echo -e "\nUsage: \e[1mextract_services <nmap_output_file>\e[0m"
     echo
     echo "Example:"
-    echo "       nmap -sV -sC -T5 -v -p22,80 <ip> -oN nmap_scan.txt"
+    echo "       nmap -sV -sC -T5 -v -p22,80 <ip> -oN machine_service_scan.txt"
     echo "       extract_services nmap_scan.txt"
     echo
     exit 0
