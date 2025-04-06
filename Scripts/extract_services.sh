@@ -4,6 +4,8 @@
 #   extractServices.sh
 #   Author: Kr31tos
 #   Purpose: Extract and colorize service info from Nmap -sV output
+#   Add script in /usr/local/bin/extract_services
+#   chmod +x extract_services
 # ============================
 
 OUTPUT_FILE="nmap_services"
