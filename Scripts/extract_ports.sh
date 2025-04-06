@@ -5,7 +5,7 @@
 #   Author: Kr31tos 😎
 #   Purpose: Extract IP and open ports from nmap -oG output
 #   Add script in /usr/local/bin/extract_ports
-#   chmod +x ~/extract_ports
+#   chmod +x extract_ports
 # ============================
 
 function show_help() {
