@@ -4,7 +4,7 @@
 #   Author: Kr31tos 😎
 #   Purpose: Write IP in /etc/hosts, check connectivity on machine, run nmap, open in browser
 #   Add script in /usr/local/bin/check_machine
-#   chmod +x ~/check_macine
+#   chmod +x check_machine
 # ============================
 
 if [ "$#" -ne 2 ]; then
