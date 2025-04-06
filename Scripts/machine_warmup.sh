@@ -65,9 +65,9 @@ ping -c 2 "$IP"
 # Nmap scan
 read -p $'\n🔍 Run quick Nmap scan? (y/n): ' choice
 if [[ "$choice" == "y" ]]; then
-    echo -e "\n${CYAN}[+]${RESET} Running Nmap scan with ${YELLOW}nmap -p- --open -T5 -v -n${RESET}"
+    echo -e "\n${CYAN}[+]${RESET} Running Nmap scan with ${YELLOW}nmap -p- --open -T5 -vv -n${RESET}"
     echo -e "\n${CYAN}[+]${RESET} Saving output to: ${GREEN}$OUTPUT_FILE${RESET}\n"
-    nmap -p- --open -T5 -v -n "$IP" -oG "$OUTPUT_FILE"
+    nmap -p- --open -T5 -vv -n "$IP" -oG "$OUTPUT_FILE"
     echo -e "\n${GREEN}[👍] Scan complete!${RESET}"
 else
     echo -e "\n${YELLOW}[i] Skipped Nmap scan${RESET}"
