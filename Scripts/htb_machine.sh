@@ -1,7 +1,7 @@
 #!/bin/sh
 # ============================
 #   htb_machine.sh
-#   Author: Kr31tos 😎
+#   Author: Kr31tos 😈
 #   Purpose: Write machine's IP in pannel Generic Monitor widget
 #   Add script in /usr/local/bin/htb_machine
 #   sudo chmod +x /usr/local/bin/htb_machine
