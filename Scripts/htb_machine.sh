@@ -1,11 +1,16 @@
 #!/bin/sh
+# ============================
+#   htb_machine.sh
+#   Author: Kr31tos 😎
+#   Purpose: Write machine's IP in pannel Generic Monitor widget
+#   Add script in /usr/local/bin/htb_machine
+#   sudo chmod +x /usr/local/bin/htb_machine
+# ============================
 
-# Add script in /usr/local/bin/htb_machine
-# sudo chmod +x /usr/local/bin/htb_machine
 
 #!/bin/sh
 
-CONFIG_FILE="/home/Kr31tos/Desktop/Scripts/.config/htb/ip.txt"
+CONFIG_FILE="/home/Kr31tos/Desktop/Scripts/.config/htb/ip.txt" # Change this with you path to ip.txt
 
 show_help() {
     echo "HTB IP Panel Script"
