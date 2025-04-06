@@ -1,7 +1,11 @@
 #!/bin/bash
-
-# Add script in /usr/local/bin/check_machine.sh
-# chmod +x ~/check_macine.sh
+# ============================
+#   check_machine.sh
+#   Author: Kr31tos 😎
+#   Purpose: Write IP in /etc/hosts, check connectivity on machine, run nmap, open in browser
+#   Add script in /usr/local/bin/check_machine.sh
+#   chmod +x ~/check_macine.sh
+# ============================
 
 if [ "$#" -ne 2 ]; then
     echo "Usage: check_machine.sh <IP> <hostname>"
