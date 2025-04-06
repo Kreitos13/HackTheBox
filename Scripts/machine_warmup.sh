@@ -17,6 +17,23 @@ BLUE="\e[1;34m"
 BOLD="\e[1m"
 RESET="\e[0m"
 
+# machine_warmup Banner
+echo -e "${CYAN}${BOLD}"
+cat << "EOF"
+                       _     _
+                      | |   (_)
+  _ __ ___   __ _  ___| |__  _ _ __   ___   __      ____ _ _ __ _ __ ___  _   _ _ __
+ | '_ ` _ \ / _` |/ __| '_ \| | '_ \ / _ \  \ \ /\ / / _` | '__| '_ ` _ \| | | | '_ \
+ | | | | | | (_| | (__| | | | | | | |  __/   \ V  V / (_| | |  | | | | | | |_| | |_) |
+ |_| |_| |_|\__,_|\___|_| |_|_|_| |_|\___|    \_/\_/ \__,_|_|  |_| |_| |_|\__,_| .__/
+                                                                               | |
+                                                                               |_|
+
+                                                                          By Kr31tos 😈
+
+EOF
+echo -e "${RESET}"
+
 # Argument check
 if [ "$#" -ne 2 ]; then
     echo -e "${RED}[i]${RESET} ${YELLOW}Usage:${RESET} ${BOLD}machine_warmup <IP> <HOSTNAME>${RESET}"
