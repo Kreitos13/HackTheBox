@@ -28,11 +28,8 @@ cat << "EOF"
  |_| |_| |_|\__,_|\___|_| |_|_|_| |_|\___|    \_/\_/ \__,_|_|  |_| |_| |_|\__,_| .__/
                                                                                | |
                                                                                |_|
-
-                                                                          By Kr31tos 😈
-
 EOF
-echo -e "${RESET}"
+echo -e "\n${MAGENTA}${BOLD}                          Machine Warmup by Kr31tos 😈${RESET}\n"
 
 # Argument check
 if [ "$#" -ne 2 ]; then
