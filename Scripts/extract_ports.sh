@@ -13,6 +13,7 @@ CYAN="\e[1;36m"
 GREEN="\e[1;32m"
 YELLOW="\e[1;33m"
 RED="\e[1;31m"
+BLUE="\e[1;34m"
 MAGENTA="\e[1;35m"
 BOLD="\e[1m"
 RESET="\e[0m"
@@ -28,6 +29,7 @@ function show_help() {
     echo "         -h, --help            Show this help message"
     exit 0
 }
+
 
 # Help option
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then
@@ -54,9 +56,9 @@ ports_csv=$(IFS=, ; echo "${ports_array[*]}")
 ip=$(grep -oP '\d{1,3}(\.\d{1,3}){3}' "$FILE" | sort -u | head -n 1)
 
 # Display Header
-echo -e "\n${MAGENTA}══════════════════════════════════════════════${RESET}"
-echo -e "${BOLD}${CYAN}🔍 Nmap Port Extractor by Kr31tos 😈${RESET}"
-echo -e "${MAGENTA}══════════════════════════════════════════════${RESET}"
+echo -e "\n${BLUE}╔═════════════════════════════════════════════╗${RESET}"
+echo -e "${BOLD}${CYAN}      🔍 Nmap Port Extractor by Kr31tos 😈${RESET}"
+echo -e "${BLUE}╚═════════════════════════════════════════════╝${RESET}"
 
 # Main Data
 echo -e "${CYAN}[📌]${RESET} ${BOLD}Target IP:${RESET}     ${GREEN}$ip${RESET}"
@@ -64,13 +66,13 @@ echo -e "${CYAN}[🚪]${RESET} ${BOLD}Open Ports:${RESET}    ${YELLOW}$ports_csv
 
 # Pretty Table
 echo -e "${CYAN}[📊]${RESET} ${BOLD}Open Ports Table:${RESET}"
-echo -e "${MAGENTA}──────────────────────${RESET}"
+echo -e "${BLUE}──────────────────────${RESET}"
 printf "${BOLD}${YELLOW}%-8s${RESET}\n" "PORT"
-echo -e "${MAGENTA}──────────────────────${RESET}"
+echo -e "${BLUE}──────────────────────${RESET}"
 for port in "${ports_array[@]}"; do
     printf "${GREEN}%-8s${RESET}\n" "$port"
 done
-echo -e "${MAGENTA}──────────────────────${RESET}"
+echo -e "${BLUE}──────────────────────${RESET}"
 
 # Copy to clipboard
 if command -v xclip >/dev/null; then
@@ -80,4 +82,4 @@ else
     echo -e "\n${YELLOW}[⚠] xclip not found. Ports not copied.${RESET}"
 fi
 
-echo -e "${MAGENTA}══════════════════════════════════════════════${RESET}\n"
+echo -e "${BLUE}══════════════════════════════════════════════${RESET}\n"
