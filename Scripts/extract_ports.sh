@@ -77,7 +77,9 @@ done
 
 echo -e "${BLUE}──────────────────────${RESET}"
 
+# Copy to clipboard
 if command -v xclip >/dev/null; then
+    echo -n "$ports_csv" | xclip -selection clipboard
     echo -e "\n${CYAN}[✅]${RESET} Ports copied to clipboard!"
 else
     echo -e "\n${YELLOW}[⚠] xclip not found. Ports not copied.${RESET}"
