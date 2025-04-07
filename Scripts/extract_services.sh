@@ -1,71 +1,89 @@
 #!/bin/bash
 
 # ============================
-#   extractServices.sh
+#   extract_services.sh
 #   Author: Kr31tos 😈
 #   Purpose: Extract and colorize service info from Nmap -sV output
 #   Add script in /usr/local/bin/extract_services
 #   sudo chmod +x extract_services
 # ============================
 
-OUTPUT_FILE="nmap_services"
-
-show_help() {
-    echo -e "\nUsage: \e[1mextract_services <nmap_output_file>\e[0m"
-    echo
-    echo "Example:"
-    echo "       nmap -sV -sC -T5 -v -p22,80 <ip> -oN machine_service_scan.txt"
-    echo "       extract_services nmap_scan.txt"
-    echo
-    exit 0
-}
+#!/bin/bash
 
 # Colors
 CYAN="\e[1;36m"
 GREEN="\e[1;32m"
 YELLOW="\e[1;33m"
+RED="\e[1;31m"
+MAGENTA="\e[1;35m"
 BOLD="\e[1m"
 RESET="\e[0m"
 
-# Handle help
-if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+# BANNER
+echo -e "${CYAN}${BOLD}"
+cat << "EOF"
+  ______      _                  _        _____                 _               
+ |  ____|    | |                | |      / ____|               (_)              
+ | |__  __  _| |_ _ __ __ _  ___| |_    | (___   ___ _ ____   ___  ___ ___  ___ 
+ |  __| \ \/ / __| '__/ _` |/ __| __|    \___ \ / _ \ '__\ \ / / |/ __/ _ \/ __|
+ | |____ >  <| |_| | | (_| | (__| |_     ____) |  __/ |   \ V /| | (_|  __/\__ \
+ |______/_/\_\\__|_|  \__,_|\___|\__|   |_____/ \___|_|    \_/ |_|\___\___||___/
+EOF
+echo -e "\n${MAGENTA}${BOLD}                          Service Extractor by Kr31tos 😈${RESET}\n"
+
+# Help
+show_help() {
+    echo -e "\n${YELLOW}Usage:${RESET} extract_services <ip> <ports>"
+    echo -e "\n${YELLOW}Example:${RESET} extract_services 10.10.10.75 22,80"
+    echo
+    exit 0
+}
+
+# Validate args
+if [ "$#" -ne 2 ]; then
     show_help
 fi
 
-# Check input file
-if [ $# -ne 1 ]; then
-    echo -e "${YELLOW}[-] Error:${RESET} Please provide an Nmap output file"
-    exit 1
-fi
+IP="$1"
+PORTS="$2"
+MACHINE_NAME=$(grep "$IP" /etc/hosts | awk '{print $2}' | cut -d. -f1)
+[ -z "$MACHINE_NAME" ] && MACHINE_NAME="target"
 
-FILE="$1"
+SCAN_FILE="nmap_services_scan.txt"
+OUTPUT_FILE="${MACHINE_NAME}_services_scan"
 
-if [ ! -f "$FILE" ]; then
-    echo -e "${YELLOW}[-] Error:${RESET} File not found: $FILE"
-    exit 1
-fi
+echo -e "${CYAN}[+]${RESET} Target IP: ${YELLOW}$IP${RESET}"
+echo -e "${CYAN}[+]${RESET} Ports:     ${GREEN}$PORTS${RESET}"
+echo -e "\n${CYAN}[+]${RESET} Running Nmap scan... Output → ${MAGENTA}$SCAN_FILE${RESET}\n"
 
-# Initialize output file
-echo "Service Scan Summary (from: $FILE)" > "$OUTPUT_FILE"
-echo "--------------------------------------" >> "$OUTPUT_FILE"
+# Run Nmap
+nmap -sC -sV -T5 -vv -p"$PORTS" "$IP" -oN "$SCAN_FILE"
 
-# Header for terminal
-echo -e "\n${BOLD}${CYAN}[*] Extracted Services:${RESET}"
-printf "${BOLD}%-10s %-15s %-40s${RESET}\n" "PORT" "SERVICE" "VERSION"
-echo -e "${CYAN}-------------------------------------------------------------${RESET}"
+# Header for both terminal and file
+TABLE_HEADER=$(cat <<EOF
+╔═══════════════════════════════════════════════════════════════════════╗
+               🚀 Extracted Services from: $MACHINE_NAME             
+╚═══════════════════════════════════════════════════════════════════════╝
+       PORT             SERVICE           VERSION
+─────────────────────────────────────────────────────────────────────────
+EOF
+)
 
-# Process and output
-grep -E "^[0-9]+/(tcp|udp)" "$FILE" | grep open | while read -r line; do
+echo -e "\n${BOLD}${CYAN}${TABLE_HEADER}${RESET}"
+echo -e "\n${BOLD}${CYAN}$TABLE_HEADER${RESET}" > "$OUTPUT_FILE"
+
+# Process & output
+grep -E "^[0-9]+/(tcp|udp)" "$SCAN_FILE" | grep open | while read -r line; do
     port=$(echo "$line" | awk '{print $1}')
     service=$(echo "$line" | awk '{print $3}')
     version=$(echo "$line" | cut -d ' ' -f4-)
 
-    # Print to terminal (colorized)
-    printf "[${CYAN}%-8s${RESET}] ${GREEN}%-13s${RESET} - ${YELLOW}%-40s${RESET}\n" "$port" "$service" "$version"
+    # Terminal Output (with colors)
+    printf " [    ${GREEN}%-10s${RESET}] ${MAGENTA}%-15s${RESET} ${YELLOW}%-40s${RESET}\n" "$port" "       $service" "        $version"
 
-    # Print to file (plain)
-    printf "%-10s %-15s %s\n" "$port" "$service" "$version" >> "$OUTPUT_FILE"
+    # File Output (with raw ANSI colors)
+    printf "\n [    \e[1;32m%-10s\e[0m] \e[1;35m%-15s\e[0m \e[1;33m%-40s\e[0m\n" "$port" "       $service" "        $version" >> "$OUTPUT_FILE"
 done
 
-# Footer
-echo -e "\n${GREEN}[✔] Output saved to:${RESET} $OUTPUT_FILE"
+# Final Line
+echo -e "\n${GREEN}[✔]${RESET} Output saved to: ${BOLD}$OUTPUT_FILE${RESET}\n"
