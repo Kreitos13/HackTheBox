@@ -8,13 +8,12 @@
 #   sudo chmod +x extract_services
 # ============================
 
-#!/bin/bash
-
 # Colors
 CYAN="\e[1;36m"
 GREEN="\e[1;32m"
 YELLOW="\e[1;33m"
 RED="\e[1;31m"
+BLUE="\e[1;34m"
 MAGENTA="\e[1;35m"
 BOLD="\e[1m"
 RESET="\e[0m"
@@ -29,7 +28,7 @@ cat << "EOF"
  | |____ >  <| |_| | | (_| | (__| |_     ____) |  __/ |   \ V /| | (_|  __/\__ \
  |______/_/\_\\__|_|  \__,_|\___|\__|   |_____/ \___|_|    \_/ |_|\___\___||___/
 EOF
-echo -e "\n${MAGENTA}${BOLD}                          Service Extractor by Kr31tos 😈${RESET}\n"
+echo -e "\n${MAGENTA}${BOLD}                           Service Extractor by Kr31tos 😈${RESET}\n"
 
 # Help
 show_help() {
@@ -62,15 +61,15 @@ nmap -sC -sV -T5 -vv -p"$PORTS" "$IP" -oN "$SCAN_FILE"
 # Header for both terminal and file
 TABLE_HEADER=$(cat <<EOF
 ╔═══════════════════════════════════════════════════════════════════════╗
-               🚀 Extracted Services from: $MACHINE_NAME             
-╚═══════════════════════════════════════════════════════════════════════╝
-       PORT             SERVICE           VERSION
-─────────────────────────────────────────────────────────────────────────
+               🚀 Extracted Services from: ${CYAN}$MACHINE_NAME${RESET} ${BLUE}            
+╚═══════════════════════════════════════════════════════════════════════╝${RESET}
+       ${GREEN}PORT${RESET}             ${MAGENTA}SERVICE${RESET}           ${YELLOW}VERSION${RESET}${BLUE}
+─────────────────────────────────────────────────────────────────────────${RESET}
 EOF
 )
 
-echo -e "\n${BOLD}${CYAN}${TABLE_HEADER}${RESET}"
-echo -e "\n${BOLD}${CYAN}$TABLE_HEADER${RESET}" > "$OUTPUT_FILE"
+echo -e "\n${BOLD}${BLUE}${TABLE_HEADER}${RESET}"
+echo -e "\n${BOLD}${BLUE}$TABLE_HEADER${RESET}" > "$OUTPUT_FILE"
 
 # Process & output
 grep -E "^[0-9]+/(tcp|udp)" "$SCAN_FILE" | grep open | while read -r line; do
