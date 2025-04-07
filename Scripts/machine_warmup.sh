@@ -80,3 +80,7 @@ fi
 # Done
 echo -e "\n\n${GREEN}[👍]${RESET} ${BOLD}All done! Happy hacking 😎${RESET}"
 echo -e "${BLUE}==============================${RESET}"
+
+# Done
+echo -e "\n\n${GREEN}[👍]${RESET} ${BOLD}All done! Happy hacking 😎${RESET}"
+echo -e "${BLUE}==============================${RESET}"
