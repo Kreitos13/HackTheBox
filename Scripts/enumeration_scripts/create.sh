@@ -18,5 +18,5 @@ MACHINE="$1"
 # Create root folder
 mkdir -p "$MACHINE"/{1-Enumeration,2-Web_Footprinting,3-Initial_Foothold,4-Privilege_Escalation}
 
-echo -e"\n✅ Directory structure for '$MACHINE' created:\n"
+echo -e "\n🗂 Directory structure for '$MACHINE' created:\n"
 tree "$MACHINE"
