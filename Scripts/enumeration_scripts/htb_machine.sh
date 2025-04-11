@@ -7,9 +7,6 @@
 #   sudo chmod +x /usr/local/bin/htb_machine
 # ============================
 
-
-#!/bin/sh
-
 CONFIG_FILE="/home/Kr31tos/Desktop/Scripts/.config/htb/ip.txt" # Change this with you path to ip.txt
 
 show_help() {
