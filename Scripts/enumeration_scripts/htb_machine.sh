@@ -7,18 +7,21 @@
 #   sudo chmod +x /usr/local/bin/htb_machine
 # ============================
 
-CONFIG_FILE="/home/Kr31tos/Desktop/Scripts/.config/htb/ip.txt" # Change this with you path to ip.txt
+CONFIG_FILE="/home/kr31tos/Documents/Scripts/.config/htb/machine_ip.txt" # Change this with you path to ip.txt
 
 show_help() {
+    echo
     echo "HTB IP Panel Script"
     echo
     echo "Usage:"
     echo "  htb_machine                          Run in XFCE panel mode (GENMON)"
     echo "  htb_machine --set <IP> <HOSTNAME>    Set the current HTB machine"
     echo "  htb_machine -h | --help              Show this help message"
+    echo "  htb_machine --reset                  Reset status"
     echo
     echo "Examples:"
     echo "  htb_machine --set 10.10.11.150 knife.htb"
+    echo
     exit 0
 }
 
@@ -33,7 +36,16 @@ case "$1" in
             exit 1
         fi
         echo "$2 $3" > "$CONFIG_FILE"
+    echo
         echo "[+] HTB IP set to: $2 $3"
+    echo
+        exit 0
+        ;;
+    --reset)
+    echo "No Machine" > "$CONFIG_FILE"
+    echo
+        echo "[✔] HTB machine reset to 'No Machine'"
+    echo
         exit 0
         ;;
 esac
