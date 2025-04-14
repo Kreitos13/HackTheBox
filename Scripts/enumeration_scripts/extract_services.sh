@@ -56,7 +56,7 @@ echo -e "${CYAN}[+]${RESET} Ports:     ${GREEN}$PORTS${RESET}"
 echo -e "\n${CYAN}[+]${RESET} Running Nmap scan... Output → ${MAGENTA}$SCAN_FILE${RESET}\n"
 
 # Run Nmap
-nmap -sC -sV -T5 -vv --stats-every=3s -p"$PORTS" "$IP" -oN "$SCAN_FILE"
+nmap -sC -sV -T5 -vv --stats-every=5s -p"$PORTS" "$IP" -oN "$SCAN_FILE"
 
 # Header for both terminal and file
 TABLE_HEADER=$(cat <<EOF
